@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<title>Realm Shaper – RS001</title>
+<style>
+body { background:#0b0b0f; color:white; font-family:Arial; text-align:center; }
+input { font-size:20px; padding:10px; width:200px; }
+button { padding:10px 20px; font-size:18px; margin-top:10px; }
+#error { color:red; margin-top:10px; }
+#cards { display:none; grid-template-columns:repeat(auto-fit, minmax(150px,1fr)); gap:15px; padding:20px; }
+#cards img { width:100%; cursor:pointer; }
+#fullscreen { display:none; position:fixed; inset:0; background:black; }
+#fullscreen img { max-width:100%; max-height:100%; }
+#back { position:absolute; top:10px; left:10px; font-size:30px; cursor:pointer; }
+</style>
+</head>
+<body>
+<h1>Realm Shaper – RS001</h1>
+<p>Wpisz 7-cyfrowy kod RS</p>
+<input id="code" maxlength="7">
+<br>
+<button onclick="check()">Aktywuj</button>
+<div id="error"></div>
+<div id="cards">
+  <img src="1.png" onclick="open(this)">
+  <img src="2.png" onclick="open(this)">
+  <img src="3.png" onclick="open(this)">
+  <img src="4.png" onclick="open(this)">
+  <img src="5.png" onclick="open(this)">
+  <img src="6.png" onclick="open(this)">
+  <img src="7.png" onclick="open(this)">
+  <img src="shapecrystal.png">
+</div>
+<div id="fullscreen" onclick="closeFull()">
+  <div id="back">←</div>
+  <img id="big">
+</div>
+<script>
+const correctCode = "1234657"; // <- wpisz swój 7-cyfrowy kod
+function check() {
+  if (document.getElementById("code").value === correctCode) {
+    document.getElementById("cards").style.display="grid";
+    document.getElementById("error").innerText="";
+  } else {
+    document.getElementById("error").innerText="Nieprawidłowy kod RS";
+  }
+}
+function open(img) {
+  document.getElementById("big").src = img.src;
+  document.getElementById("fullscreen").style.display="flex";
+}
+function closeFull() {
+  document.getElementById("fullscreen").style.display="none";
+}
+</script>
+</body>
+</html>
