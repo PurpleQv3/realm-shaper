@@ -171,7 +171,7 @@ function openCard(img, name, type, number, setName, rarity, weapon) {
   document.getElementById("fullscreen").classList.add("active");
 }
 
-window.addEventListener("pageshow", () => {  // pageshow działa także przy bfcache
+document.addEventListener("DOMContentLoaded", () => {
   const cards = document.getElementById("cards");
   const intro = document.getElementById("intro");
   const afterCode = document.getElementById("after-code");
@@ -179,6 +179,7 @@ window.addEventListener("pageshow", () => {  // pageshow działa także przy bfc
 
   // Reset wszystkich elementów
   cards.classList.remove("active");
+  cards.style.display = "none"; // <- wymuszenie ukrycia
   intro.style.display = "block";
   afterCode.style.display = "none";
   error.style.display = "none";
