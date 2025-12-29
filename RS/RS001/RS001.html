@@ -4,46 +4,76 @@
 <meta charset="UTF-8">
 <title>Realm Shaper – RS001</title>
 <style>
-body { background:#0b0b0f; color:white; font-family:Arial; text-align:center; }
-input { font-size:20px; padding:10px; width:200px; }
-button { padding:10px 20px; font-size:18px; margin-top:10px; }
-#error { color:red; margin-top:10px; }
-#cards { display:none; grid-template-columns:repeat(auto-fit, minmax(150px,1fr)); gap:15px; padding:20px; }
-#cards img { width:100%; cursor:pointer; }
+body {
+  margin: 0;
+  background: #0b0b0b;
+  color: white;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+input, button {
+  padding: 10px;
+  font-size: 16px;
+}
+
+#error {
+  color: red;
+  margin-top: 10px;
+  display: none;
+}
+
+#cards {
+  display: none;
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 15px;
+  padding: 20px;
+}
+
+.card {
+  max-width: 160px;
+  cursor: pointer;
+}
+
 #fullscreen {
   display: none;
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.9);
+  background: rgba(0,0,0,0.95);
+  z-index: 1000;
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 1000;
-}
-#fullscreen img {
-  max-width: 90%;
-  max-height: 90%;
-  object-fit: contain;
-}
-#back {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  font-size: 30px;
-  color: white;
-  cursor: pointer;
-  z-index: 1001;
 }
 
+#fullscreen img {
+  max-width: 95%;
+  max-height: 95%;
+}
+
+#back {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  font-size: 28px;
+  cursor: pointer;
+}
 </style>
 </head>
+
 <body>
+
 <h1>Realm Shaper – RS001</h1>
 <p>Wpisz 7-cyfrowy kod RS</p>
+
 <input id="code" maxlength="7">
-<br>
+<br><br>
 <button onclick="check()">Aktywuj</button>
-<div id="error"></div>
+
+<div id="error">❌ Kod nieprawidłowy. Spróbuj ponownie.</div>
+
 <div id="cards">
   <img src="Realm Unification kemonimimi Tailwind Runner 18_87 card Px2.png" onclick="open(this)">
   <img src="Realm Unification Dwarf Mountain Guard 24_87 card Px2.png" onclick="open(this)">
@@ -54,29 +84,34 @@ button { padding:10px 20px; font-size:18px; margin-top:10px; }
   <img src="Realm Unification demigod White Aractus 78_87 card Px2.png" onclick="open(this)">
   <img src="Light Shapecrystal">
 </div>
-<div id="fullscreen" onclick="closeFull()">
-  <div id="back">←</div>
+
+<div id="fullscreen">
+  <div id="back" onclick="closeCard()">←</div>
   <img id="big">
 </div>
+
 <script>
-const correctCode = "1234657"; // <- wpisz swój 7-cyfrowy kod
+const правильnyKod = "1234657"; // ← ZMIENIASZ NA SWÓJ
+
 function check() {
-  if (document.getElementById("code").value === correctCode) {
-    document.getElementById("cards").style.display="grid";
-    document.getElementById("error").innerText="";
+  const input = document.getElementById("code").value;
+  if (input === правильnyKod) {
+    document.getElementById("cards").style.display = "grid";
+    document.getElementById("error").style.display = "none";
   } else {
-    document.getElementById("error").innerText="Nieprawidłowy kod RS";
+    document.getElementById("error").style.display = "block";
   }
 }
-function open(img) {
+
+function openCard(img) {
   document.getElementById("big").src = img.src;
   document.getElementById("fullscreen").style.display = "flex";
 }
-function closeFull() {
-document.getElementById("back").onclick = function(e){
-  e.stopPropagation(); // żeby nie wywołało onclick fullscreen
+
+function closeCard() {
   document.getElementById("fullscreen").style.display = "none";
 }
 </script>
+
 </body>
 </html>
