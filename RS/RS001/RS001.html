@@ -100,6 +100,21 @@ input, button { padding: 10px; font-size: 16px; }
 <button onclick="check()">Aktywuj</button>
 <div id="error">❌ Kod nieprawidłowy</div>
 
+<!-- HTML – dodaj w body nad kartami -->
+<div id="intro">
+  <h1 id="main-title">Realm Shaper – RS001</h1>
+  <p id="code-prompt">Wpisz 7-cyfrowy kod RS</p>
+  <input id="code" maxlength="7">
+  <br><br>
+  <button onclick="check()">Aktywuj</button>
+  <div id="error">❌ Kod nieprawidłowy</div>
+</div>
+
+<div id="after-code" style="display:none;">
+  <h1 style="font-size: 60px; margin: 20px 0;">Realm Shaper</h1>
+  <h2 style="font-size: 36px; margin: 10px 0;">Realm Unification addon pack</h2>
+</div>
+
 <!-- KARTY -->
 <div id="cards">
   <img src="Realm Unification kemonimimi Tailwind Runner 18_87 card Px2.png" class="card"
@@ -137,11 +152,16 @@ const CORRECT_CODE = "1234657";
 
 function check() {
   const input = document.getElementById("code").value;
-  const cards = document.getElementById("cards");
   const error = document.getElementById("error");
+  const cards = document.getElementById("cards");
+  const intro = document.getElementById("intro");
+  const afterCode = document.getElementById("after-code");
+
   if (input === CORRECT_CODE) {
-    cards.classList.add("active");
     error.style.display = "none";
+    cards.classList.add("active");          // pokaż karty
+    intro.style.display = "none";           // ukryj intro
+    afterCode.style.display = "block";      // pokaż nowe napisy
   } else {
     error.style.display = "block";
   }
