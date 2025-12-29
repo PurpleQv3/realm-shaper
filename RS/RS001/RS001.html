@@ -149,18 +149,20 @@ function check() {
   const intro = document.getElementById("intro");
   const afterCode = document.getElementById("after-code");
 
-if (input === CORRECT_CODE) {
-  error.style.display = "none";
-  cards.classList.add("active");
-  cards.style.display = "grid"; // <- wymuszenie widoczności
-  intro.style.display = "none";
-  afterCode.style.display = "block";
+  if (input === CORRECT_CODE) {
+    error.style.display = "none";
+    cards.style.display = "grid";   // pokaż karty
+    intro.style.display = "none";   // ukryj intro
+    afterCode.style.display = "block"; // pokaż napisy
+  } else {
+    error.style.display = "block";
+  }
 }
 
-}
-
-// Funkcja otwierająca powiększoną kartę z panelem info po prawej
+// funkcja do otwierania karty fullscreen
 function openCard(img, name, type, number, setName, rarity, weapon) {
+  const fs = document.getElementById("fullscreen");
+  fs.style.display = "flex"; // <- pokaż fullscreen
   document.getElementById("big").src = img.src;
   document.getElementById("card-name").innerText = name;
   document.getElementById("card-type").innerText = type;
@@ -168,24 +170,30 @@ function openCard(img, name, type, number, setName, rarity, weapon) {
   document.getElementById("card-set").innerText = setName;
   document.getElementById("card-rarity").innerText = rarity;
   document.getElementById("card-weapon").innerText = weapon;
-  document.getElementById("fullscreen").classList.add("active");
+  fs.classList.add("active");
 }
 
+// funkcja do zamykania fullscreen
+function closeCard() {
+  const fs = document.getElementById("fullscreen");
+  fs.classList.remove("active");
+  fs.style.display = "none"; // <- wymuszenie ukrycia
+}
+
+// reset strony przy wejściu
 document.addEventListener("DOMContentLoaded", () => {
   const cards = document.getElementById("cards");
   const intro = document.getElementById("intro");
   const afterCode = document.getElementById("after-code");
   const error = document.getElementById("error");
 
-  // Reset wszystkich elementów
   cards.classList.remove("active");
-  cards.style.display = "none"; // <- wymuszenie ukrycia
+  cards.style.display = "none"; // ukrycie kart
   intro.style.display = "block";
   afterCode.style.display = "none";
   error.style.display = "none";
   document.getElementById("code").value = "";
 });
-
 </script>
 
 </body>
