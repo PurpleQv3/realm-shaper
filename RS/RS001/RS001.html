@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Realm Shaper – RS001</title>
+
 <style>
 body {
   margin: 0;
@@ -11,6 +12,8 @@ body {
   font-family: Arial, sans-serif;
   text-align: center;
 }
+
+h1 { margin-top: 30px; }
 
 input, button {
   padding: 10px;
@@ -23,20 +26,26 @@ input, button {
   display: none;
 }
 
+/* KARTY – DOMYŚLNIE UKRYTE */
 #cards {
   display: none;
   margin-top: 30px;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  gap: 15px;
   padding: 20px;
+  gap: 15px;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+}
+
+/* PO KODZIE */
+#cards.active {
+  display: grid;
 }
 
 .card {
-  max-width: 160px;
+  width: 140px;
   cursor: pointer;
 }
 
+/* FULLSCREEN */
 #fullscreen {
   display: none;
   position: fixed;
@@ -47,9 +56,14 @@ input, button {
   justify-content: center;
 }
 
+#fullscreen.active {
+  display: flex;
+}
+
 #fullscreen img {
   max-width: 95%;
   max-height: 95%;
+  object-fit: contain;
 }
 
 #back {
@@ -71,8 +85,9 @@ input, button {
 <br><br>
 <button onclick="check()">Aktywuj</button>
 
-<div id="error">❌ Kod nieprawidłowy. Spróbuj ponownie.</div>
+<div id="error">❌ Kod nieprawidłowy</div>
 
+<!-- KARTY -->
 <div id="cards">
   <img src="Realm Unification kemonimimi Tailwind Runner 18_87 card Px2.png" onclick="open(this)">
   <img src="Realm Unification Dwarf Mountain Guard 24_87 card Px2.png" onclick="open(this)">
@@ -84,33 +99,37 @@ input, button {
   <img src="Light Shapecrystal">
 </div>
 
+<!-- FULLSCREEN -->
 <div id="fullscreen">
   <div id="back" onclick="closeCard()">←</div>
   <img id="big">
 </div>
 
 <script>
-const правильnyKod = "1234657"; // ← ZMIENIASZ NA SWÓJ
+const CORRECT_CODE = "1234657"; // ← ZMIEŃ NA SWÓJ
 
 function check() {
   const input = document.getElementById("code").value;
-  if (input === правильnyKod) {
-    document.getElementById("cards").style.display = "grid";
-    document.getElementById("error").style.display = "none";
+  const cards = document.getElementById("cards");
+  const error = document.getElementById("error");
+
+  if (input === CORRECT_CODE) {
+    cards.classList.add("active");
+    error.style.display = "none";
   } else {
-    document.getElementById("error").style.display = "block";
+    error.style.display = "block";
   }
 }
 
 function openCard(img) {
+  const fs = document.getElementById("fullscreen");
   document.getElementById("big").src = img.src;
-  document.getElementById("fullscreen").style.display = "flex";
+  fs.classList.add("active");
 }
 
 function closeCard() {
-  document.getElementById("fullscreen").style.display = "none";
+  document.getElementById("fullscreen").classList.remove("active");
 }
 </script>
 
-</body>
-</html>
+</
