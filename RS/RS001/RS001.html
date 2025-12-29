@@ -60,6 +60,23 @@ input, button { padding: 10px; font-size: 16px; }
   border-radius: 10px;
 }
 
+#back {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  font-size: 48px;    /* powiększona strzałka */
+  cursor: pointer;
+  color: white;
+  user-select: none;   /* uniemożliwia zaznaczanie */
+  z-index: 1010;       /* nad obrazkiem */
+}
+
+@media (max-width: 900px) {
+  #back {
+    font-size: 36px;   /* mniejsza na telefonach */
+  }
+}
+
 #card-info {
   max-width: 40vw;
   font-size: 1.8vw;
@@ -92,6 +109,8 @@ input, button { padding: 10px; font-size: 16px; }
 </style>
 </head>
 <body>
+
+
 <!-- HTML – dodaj w body nad kartami -->
 <div id="intro">
   <h1 id="main-title">Realm Shaper – RS001</h1>
