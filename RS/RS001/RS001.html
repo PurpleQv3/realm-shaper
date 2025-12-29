@@ -170,18 +170,14 @@ function openCard(img, name, type, number, setName, rarity, weapon) {
   document.getElementById("fullscreen").classList.add("active");
 }
 
-// Funkcja zamykająca powiększenie
-function closeCard() {
-  document.getElementById("fullscreen").classList.remove("active");
-}
-
-  window.onload = () => {
-  document.getElementById("code").value = "";
+window.onload = () => {
+  document.getElementById("codeForm").reset();
   document.getElementById("cards").classList.remove("active");
   document.getElementById("intro").style.display = "block";
   document.getElementById("after-code").style.display = "none";
   document.getElementById("error").style.display = "none";
 };
+
 
 </script>
 
