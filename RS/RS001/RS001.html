@@ -24,7 +24,8 @@ input, button { padding: 10px; font-size: 16px; }
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
 }
-#cards.active { display: grid; }
+<div id="cards" style="display: none;">
+
 
 .card {
   width: 140px;
@@ -148,14 +149,14 @@ function check() {
   const intro = document.getElementById("intro");
   const afterCode = document.getElementById("after-code");
 
-  if (input === CORRECT_CODE) {
-    error.style.display = "none";
-    cards.classList.add("active");          // pokaż karty
-    intro.style.display = "none";           // ukryj intro
-    afterCode.style.display = "block";      // pokaż nowe napisy
-  } else {
-    error.style.display = "block";
-  }
+if (input === CORRECT_CODE) {
+  error.style.display = "none";
+  cards.classList.add("active");
+  cards.style.display = "grid"; // <- wymuszenie widoczności
+  intro.style.display = "none";
+  afterCode.style.display = "block";
+}
+
 }
 
 // Funkcja otwierająca powiększoną kartę z panelem info po prawej
