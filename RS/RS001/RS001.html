@@ -43,52 +43,52 @@ input, button { padding: 10px; font-size: 16px; }
   z-index: 1000;
   align-items: center;
   justify-content: center;
-  padding: 20px;
-  box-sizing: border-box;
+  padding: 2vw;
   flex-direction: row;
-  gap: 40px;
+  gap: 2vw;
 }
-#fullscreen.active { display: flex; }
+
+#fullscreen.active {
+  display: flex;
+}
 
 #fullscreen img {
-  max-width: 50%;
-  max-height: 90%;
+  max-width: 50vw;
+  max-height: 90vh;
   object-fit: contain;
   border: 2px solid #fff;
   border-radius: 10px;
 }
 
 #card-info {
+  max-width: 40vw;
+  font-size: 1.8vw;
   text-align: left;
-  max-width: 45%;
-  color: #fff;
-  font-size: 18px;
+  color: white;
 }
+
 #card-info h2 {
-  margin-top: 0;
-  margin-bottom: 15px;
-  font-size: 26px;
-  letter-spacing: 1px;
+  font-size: 2.5vw;
+  margin-bottom: 1vh;
 }
 
-#back {
-  position: absolute;
-  top: 15px;
-  left: 15px;
-  font-size: 28px;
-  cursor: pointer;
-}
-
-/* Responsywność */
+/* Responsywność dla telefonów */
 @media (max-width: 900px) {
   #fullscreen {
     flex-direction: column;
-    gap: 20px;
+    gap: 2vh;
   }
   #fullscreen img, #card-info {
-    max-width: 90%;
+    max-width: 90vw;
+  }
+  #card-info h2 {
+    font-size: 5vw;
+  }
+  #card-info {
+    font-size: 4vw;
   }
 }
+
 </style>
 </head>
 <body>
@@ -159,10 +159,9 @@ function check() {
   }
 }
 
-// funkcja do otwierania karty fullscreen
 function openCard(img, name, type, number, setName, rarity, weapon) {
   const fs = document.getElementById("fullscreen");
-  fs.style.display = "flex"; // <- pokaż fullscreen
+  fs.style.display = "flex"; // wymuszenie widoczności
   document.getElementById("big").src = img.src;
   document.getElementById("card-name").innerText = name;
   document.getElementById("card-type").innerText = type;
@@ -173,11 +172,10 @@ function openCard(img, name, type, number, setName, rarity, weapon) {
   fs.classList.add("active");
 }
 
-// funkcja do zamykania fullscreen
 function closeCard() {
   const fs = document.getElementById("fullscreen");
   fs.classList.remove("active");
-  fs.style.display = "none"; // <- wymuszenie ukrycia
+  fs.style.display = "none"; // wymuszenie ukrycia
 }
 
 // reset strony przy wejściu
