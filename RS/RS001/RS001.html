@@ -170,14 +170,19 @@ function openCard(img, name, type, number, setName, rarity, weapon) {
   document.getElementById("fullscreen").classList.add("active");
 }
 
-window.onload = () => {
-  document.getElementById("codeForm").reset();
-  document.getElementById("cards").classList.remove("active");
-  document.getElementById("intro").style.display = "block";
-  document.getElementById("after-code").style.display = "none";
-  document.getElementById("error").style.display = "none";
-};
+window.addEventListener("pageshow", () => {  // pageshow działa także przy bfcache
+  const cards = document.getElementById("cards");
+  const intro = document.getElementById("intro");
+  const afterCode = document.getElementById("after-code");
+  const error = document.getElementById("error");
 
+  // Reset wszystkich elementów
+  cards.classList.remove("active");
+  intro.style.display = "block";
+  afterCode.style.display = "none";
+  error.style.display = "none";
+  document.getElementById("code").value = "";
+});
 
 </script>
 
