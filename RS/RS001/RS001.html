@@ -126,6 +126,13 @@ input, button { padding: 10px; font-size: 16px; }
   <h2 style="font-size: 36px; margin: 10px 0;">Realm Unification addon pack</h2>
 </div>
 
+<!-- Link do poradnika -->
+<div id="guide-link" style="margin-top: 15px; display: block;">
+  <a href="https://purpleqv3.github.io/realm-shaper/RS/Poradnik/PoradnikRS.html" target="_blank" style="color:#00f; text-decoration:underline;">
+    Realm Shaper Poradnik (click me)
+  </a>
+</div>
+
 <!-- KARTY -->
 <div id="cards">
   <img src="Realm Unification kemonimimi Tailwind Runner 18_87 card Px2.png" class="card"
@@ -167,14 +174,22 @@ function check() {
   const cards = document.getElementById("cards");
   const intro = document.getElementById("intro");
   const afterCode = document.getElementById("after-code");
+  const guide = document.getElementById("guide-link");
 
   if (input === CORRECT_CODE) {
     error.style.display = "none";
     cards.style.display = "grid";   // pokaż karty
     intro.style.display = "none";   // ukryj intro
     afterCode.style.display = "block"; // pokaż napisy
+    
+    // przenieś link pod napisy
+    afterCode.appendChild(guide);
+
   } else {
     error.style.display = "block";
+    
+    // upewnij się, że link jest pod przyciskiem
+    intro.appendChild(guide);
   }
 }
 
