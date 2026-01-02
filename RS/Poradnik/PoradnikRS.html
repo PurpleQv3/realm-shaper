@@ -1,1 +1,263 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<title>Poradnik Realm Shaper</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        background: #2b2b2b;
+        color: #f0f0f0;
+        line-height: 1.5;
+    }
+
+    .container {
+        max-width: 1100px;
+        margin: auto;
+        padding: 30px;
+    }
+
+    h1 {
+        text-align: center;
+        margin-bottom: 40px;
+        font-size: 2.6em;
+    }
+
+    h2 {
+        margin-top: 40px;
+        border-bottom: 2px solid #555;
+        padding-bottom: 6px;
+    }
+
+    h3 {
+        margin-top: 25px;
+    }
+
+    .section {
+        background: #3a3a3a;
+        padding: 25px;
+        border-radius: 12px;
+        margin-bottom: 40px;
+    }
+
+    ul {
+        margin-left: 20px;
+    }
+
+    li {
+        margin-bottom: 6px;
+    }
+
+    .two-columns {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+    }
+
+    @media (max-width: 800px) {
+        .two-columns {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
+</head>
+
+<body>
+<div class="container">
+
+<h1>Poradnik Realm Shaper</h1>
+
+<div class="section two-columns">
+
+<div>
+<h2>Rzadkości Kart</h2>
+
+<p><b>Basic (B) → Rare (R) → Epic (E)</b></p>
+
+<p><b>Hidden Evolution (HE)</b> – rzadsze niż Epic<br>
+- Wygląd: Karty z numerem wyższym niż liczba kart w secie (np. 75/74)</p>
+
+<p><b>Stained Red (SR) / Green (SG) / Blue (SB)</b><br>
+- Każda karta Rare, Epic lub HE może być stained<br>
+- Rzadsze niż wersja normalna<br>
+- Wygląd: Jednokolorowe plamy na karcie: czerwony / zielony / niebieski (każdy jest tej samej rzadkości)</p>
+
+<p><b>Full Art (FA)</b><br>
+- Każda karta Epic lub HE może być FA<br>
+- Rzadsze niż stained R/G/B<br>
+- Wygląd: Cała karta jest ilustracją</p>
+
+<p><b>Stained Golden Art (SGA)</b><br>
+- Każda karta Epic lub HE może być SGA<br>
+- Ta sama rzadkość co FA<br>
+- Wygląd: Złote plamy na karcie</p>
+
+<p><b>Stained Rainbow Art (SRA)</b><br>
+- Każda karta Epic lub HE może być SRA<br>
+- Rzadsze niż FA i SGA<br>
+- Wygląd: Tęczowe plamy na karcie</p>
+
+<p><b>Reversed Full Art (RFA)</b><br>
+- Każda karta Epic lub HE może być RFA<br>
+- Rzadsze niż SRA<br>
+- Wygląd: Wszystkie kolory są białe lub czarne</p>
+
+<p><b>Original Drawn (OD)</b><br>
+- Każda karta Epic lub HE może być OD<br>
+- Rzadsze niż FA i RFA<br>
+- Każda karta rysowana ręcznie przez autora<br>
+- Każdy egzemplarz jest unikalny, nawet jeśli to ta sama karta</p>
+</div>
+
+<div>
+<h2>Rasy</h2>
+
+<p><b>Angels (B) → Archangels (R) → Gods (E)</b><br>
+Hidden evolution: ??? (HE)</p>
+
+<p><b>Lesser Demons (B) → Demons (R) → Satans (E)</b><br>
+Hidden evolution: ??? (HE)</p>
+
+<p><b>Humans (B) → Perfect Humans (R) → Demigods (E)</b><br>
+Hidden evolution: ??? (HE)</p>
+
+<p><b>Kemonimimi (B) → Beasts (R/E)</b><br>
+Hidden evolution: ??? (HE)</p>
+
+<p><b>Dwarves (B) → Half-techno dwarves (R) → Perfect techno ai (E)</b><br>
+Hidden evolution: ??? (HE)</p>
+
+<p><b>Wyverns (B) → Dragons (R) → Ancient Dragons (E)</b><br>
+Hidden evolution: ??? (HE)</p>
+
+<p><b>Half-Elves (B) → Elves (R) → Dark Elves (E) / High Elves (E)</b><br>
+Hidden evolution: ??? (HE)</p>
+</div>
+
+</div>
+
+<div class="section">
+<h2>Typy Kart</h2>
+
+<p><b>Entity Card</b> – zawiera Realmborna (grywalną postać)</p>
+
+<p><b>Item Card</b> – wzmacnia Realmborna wyspecjalizowanego w danym typie broni<br>
+- Każda karta Entity ma ikonę specjalizacji<br>
+- Item zostaje z Realmbornem przez całą grę, chyba że zostanie zabrany lub zniszczony</p>
+
+<p><b>Artifact Card</b> – może być użyta przez każdego Realmborna, ale zabiera określoną ilość jego many na całą grę (MP). Jeśli użyta przez postać z wyposażoną bronią maga MP zużywa się dwa razy mniej oraz co rundę odnawia się o 1<br>
+- Może być wzmacniana przez Realmborny, Relics lub perki z Shapecrystals<br>
+- Jednorazowego użytku</p>
+
+<p><b>Relic Card</b> – po aktywacji działa na wszystkie Entity na stole<br>
+- Efekt jest stały aż do śmierci jednostek<br>
+- Nie działa na karty w talii</p>
+
+<p><b>Shapecrystal Cards</b> – materiał do odblokowywania perków Entity lub zwiększania mocy niektórych artefaktów<br>
+- 7 typów: light, void, normal, rage, power, flame, nature<br>
+- Każda rasa aby odblokować perka musi użyć dokładnej ilości i typu shapecrystal aby zadziałało. Wyjątek: Niektóre ewolucje ras mogą odblokowywać perki używając jakiegokolwiek typu shapecrystal nie ważne co jest napisane w opisie karty</p>
+</div>
+
+<div class="section">
+<h2>Zasady gry (Uproszczone)</h2>
+
+<p><b>Główny cel:</b><br>
+Pokonanie wszystkich kart z talii gracza</p>
+
+<p><b>Przygotowanie do gry:</b><br>
+- talia 14 entity cards + 3 shapecrystals</p>
+
+<p><b>1. Gra</b><br>
+- Na trzy cztery obydwaj gracze wystawiają po jednej karcie na stół.<br>
+- Obrażenia = ATK – DEF celu<br>
+- Karty na zmianę zadają obrażenia<br>
+- Przed swoim atakiem można dodać 1 shapecrystal do karty (liczy się to nadal jako jeden ruch)<br>
+- Po pokonaniu karty przeciwnika twoja karta na stole nadal zostaje dopuki sama nie zostanie pokonana<br>
+- Po śmierci karty shapecrystal do niej przypisany, wraca do gracza ale pokonana karta nie może już grać</p>
+</div>
+
+<div class="section">
+<h2>Zasady gry (Rozwinięte)</h2>
+
+<p><b>Główny cel:</b><br>
+Zredukować HP Shaped One (gracza) do zera (zawsze ma się 100)</p>
+
+<p><b>Przygotowanie do gry:</b><br>
+- Kartka<br>
+- Długopis<br>
+- Talia 40–60 kart<br>
+- Stół do gry<br>
+- Potasuj talię<br>
+- Połóż talię po swojej prawej stronie</p>
+
+<p><b>Początek gry</b><br>
+1. Dobierz 5 kart</p>
+
+<p><b>Pierwsza runda</b></p>
+
+<p><b>Fazy rundy (4):</b></p>
+
+<p><b>1. Dobieranie</b><br>
+Dobierz 1 kartę<br>
+- Maksymalnie 8 kart na ręce<br>
+- Jeśli masz 8 – odrzuć jedną, potem dobierz</p>
+
+<p><b>2. Akcja Shapecrystals</b><br>
+Użyj:<br>
+2 Shapecrystals lub 1 Shapecrystal + 1 Weapon / Artifact / Relic</p>
+
+<p><b>3. Akcje gracza (Shaped One)</b><br>
+- Wystawianie max 2 Entity na pole bitwy<br>
+- Wyposażanie max 2 Itemów lub aktywacja max 2 Artifactów (zużywa MP Realmborna którego wybierzesz do aktywacji artifactu)<br>
+- Aktywacja Relics (stałe wzmocnienia)</p>
+
+<p><b>Ataki Realmbornów:</b><br>
+- Na wrogie Entity<br>
+- lub bezpośrednio na Shaped One, jeśli nie ma wrogich Realmbornów</p>
+
+<p><b>4. Rozliczenie</b><br>
+- Obrażenia = ATK – DEF celu<br>
+- Zastosuj efekty Shapecrystals, Itemów, Relics i zdolności<br>
+- Usuń Realmborny z 0 HP ze stołu</p>
+
+<p><b>Zasady dodatkowe</b><br>
+- Maksymalnie 5 Realmbornów na stole<br>
+- Itemy zostają przy jednostce, dopóki nie zostaną usunięte lub zniszczone<br>
+- Relics są jednorazowe, ale ich efekt jest stały<br>
+- Artifakty można używać, dopóki dany Realmborn ma wystarczające MP</p>
+
+<div class="section">
+<h2>Opis Kart</h2>
+
+<p>
+<br>
+<img src="Realm Unification entity card numered explenation.png">
+</p>
+
+<h3>Legenda</h3>
+
+<ul>
+<li><b>1.</b> Card Name</li>
+<li><b>2.</b> Mana</li>
+<li><b>3.</b> Card Type</li>
+<li><b>4.</b> Card Race (Only if it's Entity Type card)</li>
+<li><b>5.</b> Previous Evolution (Only if the card is an evolution of another)</li>
+<li><b>6.</b> Health (HP) (Only if it's Entity Type card)</li>
+<li><b>7.</b> Attack (Atk) (Only if it's Entity Type card)</li>
+<li><b>8.</b> Defence (Def) (Only if it's Entity Type card)</li>
+<li><b>9.</b> Card Description and Skills</li>
+<li><b>10.</b> Card Number and Set max. cards number</li>
+<li><b>11.</b> Weapon Specialization</li>
+<li><b>12.</b> Card Rarity</li>
+</ul>
+</div>
+
+
+</div>
+
+</div>
+</body>
+</html>
